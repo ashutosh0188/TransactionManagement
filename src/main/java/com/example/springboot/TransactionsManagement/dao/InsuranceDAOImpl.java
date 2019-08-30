@@ -3,7 +3,6 @@ package com.example.springboot.TransactionsManagement.dao;
 import com.example.springboot.TransactionsManagement.model.Insurance;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;

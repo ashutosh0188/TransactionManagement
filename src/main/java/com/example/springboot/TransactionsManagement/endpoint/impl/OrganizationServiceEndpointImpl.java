@@ -1,16 +1,17 @@
 package com.example.springboot.TransactionsManagement.endpoint.impl;
 
 import com.example.springboot.TransactionsManagement.endpoint.OrganizationServiceEndpoint;
-import com.example.springboot.TransactionsManagement.model.Employee;
-import com.example.springboot.TransactionsManagement.model.Insurance;
 import com.example.springboot.TransactionsManagement.model.Organization;
 import com.example.springboot.TransactionsManagement.service.OrganizationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/organization")
 public class OrganizationServiceEndpointImpl implements OrganizationServiceEndpoint {
+    private static final Logger log = LoggerFactory.getLogger(OrganizationServiceEndpointImpl.class);
     @Autowired
     private OrganizationService organizationService;
 
@@ -36,7 +37,7 @@ public class OrganizationServiceEndpointImpl implements OrganizationServiceEndpo
     @GetMapping("/emp/{code}")
     public Organization getEmployee(long code) {
         Organization organization = organizationService.getEmployee(code);
-        System.out.println("Response:"+organization);
+        log.info("Response:"+organization);
         return organization;
     }
 }

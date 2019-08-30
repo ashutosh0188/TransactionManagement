@@ -6,6 +6,7 @@ import com.example.springboot.TransactionsManagement.service.OrganizationService
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,6 +24,7 @@ public class OrganizationServiceEndpointImpl implements OrganizationServiceEndpo
 
     @Override
     @PostMapping("/join")
+    @Transactional
     public void joinOrganization(@RequestBody Organization organization) {
         organizationService.joinEmployee(organization);
     }

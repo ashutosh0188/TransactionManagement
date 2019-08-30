@@ -14,6 +14,9 @@ public class OrganizationService {
 
     public void joinEmployee(Organization organization) {
         employeeService.addEmployee(organization.getEmployee());
+        if(organization.getInsurance().getEmpCode()!=organization.getEmployee().getCode()) {
+            throw new RuntimeException("Employee code should be same and roll backing transaction");
+        }
         insuranceService.addInsurance(organization.getInsurance());
     }
 

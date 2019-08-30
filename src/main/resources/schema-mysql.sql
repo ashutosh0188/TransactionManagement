@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS insurance;
+CREATE TABLE employee(code INT PRIMARY KEY, name VARCHAR(128) NOT NULL)
+CREATE TABLE insurance(code INT PRIMARY KEY, name VARCHAR(128) NOT NULL, coverage_amount INT)
